@@ -68,5 +68,4 @@ function checkWin() {
 		console.log(combo);
 		allSame(combo[0], combo[1], combo[2]);
 	}
-
 }
