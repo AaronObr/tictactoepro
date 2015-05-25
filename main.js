@@ -1,4 +1,3 @@
-
 $('img').attr('src', 'e.png');
 
 $('img').on('click', onClickSquare);
@@ -46,20 +45,28 @@ function allSame(x,y,z) {
 	}
 }
 
+var combinations = [
+  // rows
+  [0,1,2],
+  [3,4,5],
+  [6,7,8],
+
+  // columns
+  [0,3,6],
+  [2,5,8],
+  [1,4,7],
+
+  // diagonals
+  [6,4,2],
+  [0,4,8],
+];
+
 function checkWin() {
 
-	// rows
-	allSame(0,1,2);
-	allSame(3,4,5);
-	allSame(6,7,8);
-
-	// columns
-	allSame(0,3,6);
-	allSame(2,5,8);
-	allSame(1,4,7);
-
-	// diagonals
-	allSame(6,4,2);
-	allSame(0,4,8);
+	for (var i in combinations) {
+		var combo = combinations[i];
+		console.log(combo);
+		allSame(combo[0], combo[1], combo[2]);
+	}
 
 }
